@@ -1,10 +1,15 @@
 class ImagefilesController < ApplicationController
 
+	attr_accessor :image
+
+	def initialize
+	  @imagefiles = Array.new
+	end
+
   def index
-    @imagefiles = Array.new
-    4.times do |countess|
+    4.times do
     imagefake = Array.new
-      4.times do |counter|
+      4.times do
         imagefake.push Random.rand(2)
       end
       @imagefiles.push imagefake
